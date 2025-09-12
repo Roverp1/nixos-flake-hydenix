@@ -1,15 +1,14 @@
-{ ... }:
-
-{
+{...}: {
   imports = [
     # ./example.nix - add your modules here
+    ./hyprland.nix
   ];
 
   programs.git = {
     enable = true;
     userName = "Roverp";
     userEmail = "yar.zubaha@proton.me";
-    
+
     extraConfig = {
       init.defaultBranch = "main";
     };
