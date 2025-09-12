@@ -28,6 +28,7 @@
     enable = true;
 
     git.enable = false;
+    firefox.enable = false;
   };
   # Visit https://github.com/richen604/hydenix/blob/main/docs/options.md for more options
 }
