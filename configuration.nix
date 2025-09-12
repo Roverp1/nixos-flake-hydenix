@@ -1,8 +1,4 @@
-{
-  inputs,
-  ...
-}:
-let
+{inputs, ...}: let
   # Package configuration - sets up package system with proper overlays
   # Most users won't need to modify this section
   pkgs = import inputs.hydenix.inputs.hydenix-nixpkgs {
@@ -12,13 +8,13 @@ let
       inputs.hydenix.lib.overlays
       (final: prev: {
         userPkgs = import inputs.nixpkgs {
+          inherit (pkgs) system;
           config.allowUnfree = true;
         };
       })
     ];
   };
-in
-{
+in {
   nixpkgs.pkgs = pkgs; # Set pkgs for hydenix globally
 
   imports = [
@@ -60,18 +56,16 @@ in
   home-manager = {
     useGlobalPkgs = true;
     useUserPackages = true;
-    extraSpecialArgs = { inherit inputs; };
+    extraSpecialArgs = {inherit inputs;};
     # User Configuration - REQUIRED: Change "hydenix" to your actual username
     # This must match the username you define in users.users below
-    users."roverp_vm" =
-      { ... }:
-      {
-        imports = [
-          inputs.hydenix.lib.homeModules
-          inputs.nix-index-database.hmModules.nix-index # Command-not-found and comma tool support
-          ./modules/hm # Your custom home-manager modules (configure hydenix.hm here!)
-        ];
-      };
+    users."roverp_vm" = {...}: {
+      imports = [
+        inputs.hydenix.lib.homeModules
+        inputs.nix-index-database.hmModules.nix-index # Command-not-found and comma tool support
+        ./modules/hm # Your custom home-manager modules (configure hydenix.hm here!)
+      ];
+    };
   };
 
   # User Account Setup - REQUIRED: Change "hydenix" to your desired username (must match above)
