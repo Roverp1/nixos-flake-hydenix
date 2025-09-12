@@ -1,8 +1,16 @@
-{...}: {
+{pkgs, ...}: {
   imports = [
     # ./example.nix - add your modules here
     ./hyprland.nix
     ./zen-browser.nix
+  ];
+
+  # home-manager options go here
+  home.packages = with pkgs; [
+    # pkgs.vscode - hydenix's vscode version
+    # pkgs.userPkgs.vscode - your personal nixpkgs version
+
+    userPkgs.opencode
   ];
 
   programs = {
@@ -15,13 +23,15 @@
         init.defaultBranch = "main";
       };
     };
-  };
 
-  # home-manager options go here
-  home.packages = [
-    # pkgs.vscode - hydenix's vscode version
-    # pkgs.userPkgs.vscode - your personal nixpkgs version
-  ];
+    opencode = {
+      enable = true;
+      package = pkgs.userPkgs.opencode;
+
+      # might be proble because of schema declaration duplication
+      settings = builtins.fromJSON (builtins.readFile ./../../Configs/.config/opencode/opencode.json);
+    };
+  };
 
   # hydenix home-manager options go here
   hydenix.hm = {
