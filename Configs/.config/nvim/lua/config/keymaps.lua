@@ -15,7 +15,7 @@ map("n", "<c-l>", "<cmd>TmuxNavigateRight<cr>", { desc = "Select bottom nvim/tmu
 
 map("n", "<Esc>", "<cmd>noh<CR>", { desc = "general clear highlights" })
 
-map("n", "<leader>sa", "ggVs", { desc = "󰒆 Select All" })
+map("n", "<leader>sa", "ggVG", { desc = "󰒆 Select All" })
 map("n", "<leader>rn", "<cmd>set rnu!<CR>", { desc = "toggle relative number" })
 map("n", "<leader>b", "<cmd>enew<CR>", { desc = "buffer new" })
 
