@@ -39,6 +39,8 @@
 
     git.enable = false;
     firefox.enable = false;
+    editors.neovim.enable = false;
+    editors.default = "nvim";
   };
   # Visit https://github.com/richen604/hydenix/blob/main/docs/options.md for more options
 }
