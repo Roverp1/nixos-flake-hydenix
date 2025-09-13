@@ -2,6 +2,7 @@
   imports = [
     # ./example.nix - add your modules here
     ./hyprland.nix
+    ./neovim.nix
     ./zen-browser.nix
   ];
 
@@ -39,7 +40,7 @@
 
     git.enable = false;
     firefox.enable = false;
-    editors.neovim.enable = false;
+    editors.neovim = false;
     editors.default = "nvim";
   };
   # Visit https://github.com/richen604/hydenix/blob/main/docs/options.md for more options
