@@ -9,3 +9,5 @@ opt.expandtab = true
 
 opt.ignorecase = true
 opt.smartcase = true
+
+opt.laststatus = 3
