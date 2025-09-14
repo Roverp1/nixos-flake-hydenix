@@ -16,6 +16,8 @@ local lsp_servers = {
 			},
 		},
 	},
+
+	nil_ls = {},
 }
 
 M.capabilities = vim.lsp.protocol.make_client_capabilities()

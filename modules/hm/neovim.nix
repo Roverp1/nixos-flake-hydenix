@@ -12,6 +12,7 @@
       fd
 
       lua-language-server
+      nil
     ];
 
     plugins = with pkgs.vimPlugins; [
