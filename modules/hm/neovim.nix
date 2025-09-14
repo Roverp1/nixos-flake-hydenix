@@ -1,5 +1,8 @@
 {pkgs, ...}: {
-  programs.neovim = {
+  programs.neovim = let
+    toLua = str: "lua << EOF\n${str}\nEOF\n";
+    toLuaFile = file: "lua << EOF\n${builtins.readFile file}\nEOF\n";
+  in {
     enable = true;
     defaultEditor = true;
     vimAlias = true;
@@ -7,16 +10,27 @@
     extraPackages = with pkgs; [
       ripgrep
       fd
+
+      lua-language-server
     ];
 
     plugins = with pkgs.vimPlugins; [
-      plenary-nvim
-      telescope-nvim
+      {
+        plugin = telescope-nvim;
+        config = toLua "require(\"telescope\").setup()";
+      }
+
+      {
+        plugin = nvim-lspconfig;
+        config = toLuaFile ./../../Configs/.config/nvim/lua/plugins/lspconfig.lua;
+      }
+
+      vim-tmux-navigator
 
       telescope-fzf-native-nvim
 
       nvim-web-devicons
-      vim-tmux-navigator
+      plenary-nvim
     ];
 
     extraLuaConfig = ''
