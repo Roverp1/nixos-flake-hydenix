@@ -49,7 +49,7 @@
       plenary-nvim
 
       {
-        plugin = userPlugins.nvim-treesitter.withPlugins (p: [
+        plugin = nvim-treesitter.withPlugins (p: [
           p.tree-sitter-nix
           p.tree-sitter-lua
         ]);
