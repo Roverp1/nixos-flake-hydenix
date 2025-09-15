@@ -37,7 +37,7 @@ M.on_attach = function(_, bufnr)
 	map("n", "gd", vim.lsp.buf.definition, opts("Go to definition"))
 	map("n", "gD", vim.lsp.buf.declaration, opts("Go to declaration"))
 	map("n", "K", vim.lsp.buf.hover, opts("Hover documentation"))
-	map("n", "<leader>rn", vim.lsp.buf.rename, opts("Rename"))
+	-- map("n", "<leader>rn", vim.lsp.buf.rename, opts("Rename")) -- doesnt work
 end
 
 for lsp, config in pairs(lsp_servers) do

@@ -26,6 +26,11 @@
         config = toLuaFile ./../../Configs/.config/nvim/lua/plugins/lspconfig.lua;
       }
 
+      {
+        plugin = pkgs.userPkgs.vimPlugins.blink-cmp;
+        config = toLuaFile ./../../Configs/.config/nvim/lua/plugins/blink.lua;
+      }
+
       vim-tmux-navigator
 
       telescope-fzf-native-nvim
