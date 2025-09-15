@@ -31,6 +31,11 @@
         config = toLuaFile ./../../Configs/.config/nvim/lua/plugins/blink.lua;
       }
 
+      {
+        plugin = luasnip;
+        config = toLuaFile ./../../Configs/.config/nvim/lua/plugins/luasnip.lua;
+      }
+
       vim-tmux-navigator
 
       telescope-fzf-native-nvim

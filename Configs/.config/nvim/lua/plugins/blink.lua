@@ -1,11 +1,11 @@
 ---@module 'blink.cmp'
 ---@type blink.cmp.Config
 local config = {
-	completion = { documentation = { auto_show = true } },
-
 	sources = {
 		default = { "lsp", "path", "snippets", "buffer" },
 	},
+
+	snippets = { preset = "luasnip" },
 
 	keymap = {
 		preset = "none",
