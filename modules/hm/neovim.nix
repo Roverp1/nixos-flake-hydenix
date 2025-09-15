@@ -2,6 +2,8 @@
   programs.neovim = let
     toLua = str: "lua << EOF\n${str}\nEOF\n";
     toLuaFile = file: "lua << EOF\n${builtins.readFile file}\nEOF\n";
+
+    userPlugins = pkgs.userPkgs.vimPlugins;
   in {
     enable = true;
     defaultEditor = true;
@@ -27,7 +29,7 @@
       }
 
       {
-        plugin = pkgs.userPkgs.vimPlugins.blink-cmp;
+        plugin = userPlugins.blink-cmp;
         config = toLuaFile ./../../Configs/.config/nvim/lua/plugins/blink.lua;
       }
 
@@ -44,7 +46,7 @@
       plenary-nvim
 
       {
-        plugin = pkgs.userPkgs.nvim-treesitter.withPlugins (p: [
+        plugin = userPlugins.nvim-treesitter.withPlugins (p: [
           p.tree-sitter-nix
           p.tree-sitter-lua
         ]);
