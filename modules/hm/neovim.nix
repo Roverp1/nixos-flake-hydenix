@@ -42,6 +42,14 @@
 
       nvim-web-devicons
       plenary-nvim
+
+      {
+        plugin = pkgs.userPkgs.nvim-treesitter.withPlugins (p: [
+          p.tree-sitter-nix
+          p.tree-sitter-lua
+        ]);
+        config = toLuaFile ./../../Configs/.config/nvim/lua/plugins/treesitter.lua;
+      }
     ];
 
     extraLuaConfig = ''
