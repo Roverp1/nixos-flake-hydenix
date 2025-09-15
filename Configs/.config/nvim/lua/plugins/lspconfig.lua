@@ -9,7 +9,7 @@ local lsp_servers = {
 				workspace = {
 					library = {
 						vim.fn.expand("$VIMRUNTIME/lua"),
-						-- vim.fn.stdpath("config") .. "/lua",
+						unpack(vim.api.nvim_list_runtime_paths()), -- works?
 					},
 				},
 				telemetry = { enable = false },
