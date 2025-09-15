@@ -10,6 +10,9 @@
     vimAlias = true;
 
     extraPackages = with pkgs; [
+      gcc
+      nodejs
+
       ripgrep
       fd
 
