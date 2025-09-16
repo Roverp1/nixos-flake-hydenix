@@ -36,7 +36,7 @@
         inherit inputs;
       };
       modules = [
-        ./configuration.nix
+        ./hosts/vm/default.nix
       ];
     };
   in {
