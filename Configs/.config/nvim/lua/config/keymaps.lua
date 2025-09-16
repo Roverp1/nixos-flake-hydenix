@@ -39,6 +39,11 @@ map("n", "<leader>fw", "<cmd>Telescope live_grep<cr>", { desc = "Live grep" })
 map("n", "<leader>fb", "<cmd>Telescope buffers<cr>", { desc = "Find buffers" })
 map("n", "<leader>fz", "<cmd>Telescope current_buffer_fuzzy_find<cr>", { desc = "Find in current buffer" })
 
+-- yazi.nvim
+map("n", "<C-n>", "<cmd>Yazi toggle<cr>", { desc = "Yazi toggle" })
+map("n", "<leader>yw", "<cmd>Yazi cwd<cr>", { desc = "Yazi open at working directory" })
+map("n", "<leader>yf", "<cmd>Yazi<cr>", { desc = "Yazi open at current file" })
+
 map(
 	"n",
 	"<leader>fa",

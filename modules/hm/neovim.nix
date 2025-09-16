@@ -10,6 +10,8 @@
     vimAlias = true;
 
     extraPackages = with pkgs; [
+      pkgs.userPkgs.yazi
+
       gcc
       nodejs
 
