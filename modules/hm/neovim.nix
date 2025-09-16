@@ -18,6 +18,11 @@
 
       lua-language-server
       nil
+
+      stylua
+      alejandra
+      prettierd
+      gotools
     ];
 
     plugins = with pkgs.vimPlugins; [
@@ -39,6 +44,11 @@
       {
         plugin = luasnip;
         config = toLuaFile ./../../Configs/.config/nvim/lua/plugins/luasnip.lua;
+      }
+
+      {
+        plugin = conform-nvim;
+        config = toLuaFile ./../../Configs/.config/nvim/lua/plugins/conform.lua;
       }
 
       vim-tmux-navigator
