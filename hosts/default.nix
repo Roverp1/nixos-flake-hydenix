@@ -22,6 +22,7 @@ in {
     inputs.hydenix.inputs.home-manager.nixosModules.home-manager
     inputs.hydenix.lib.nixOsModules
     ./../modules/system # Your custom system modules
+    ./hardware-configuration.nix
 
     # Hardware Configuration - Uncomment lines that match your hardware
     # Run `lshw -short` or `lspci` to identify your hardware
