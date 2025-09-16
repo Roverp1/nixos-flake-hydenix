@@ -53,6 +53,11 @@
         config = toLuaFile ./../../Configs/.config/nvim/lua/plugins/conform.lua;
       }
 
+      {
+        plugin = yazi-nvim;
+        config = toLuaFile ./../../Configs/.config/nvim/lua/plugins/yazi.lua;
+      }
+
       vim-tmux-navigator
 
       telescope-fzf-native-nvim
