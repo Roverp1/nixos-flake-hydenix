@@ -10,6 +10,19 @@
   home.packages = with pkgs; [
     userPkgs.yazi
     userPkgs.opencode
+
+    file
+    ffmpeg
+    p7zip
+    jq
+    poppler
+    fd
+    ripgrep
+    fzf
+    zoxide
+    resvg
+    imagemagick
+    wl-clipboard
   ];
 
   programs = {
@@ -40,6 +53,10 @@
     firefox.enable = false;
     editors.neovim = false;
     editors.default = "nvim";
+
+    theme = {
+      active = "AbyssGreen";
+      themes = ["AbyssGreen" "AncientAliens" "Another World" "BlueSky" "Cat Latte" "Decay Green" "Ever Blushing" "Greenify" "Oxo Carbon" "Peace Of Mind" "Vanta Black"];
+    };
   };
-  # Visit https://github.com/richen604/hydenix/blob/main/docs/options.md for more options
 }
