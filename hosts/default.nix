@@ -21,8 +21,7 @@ in {
     # hydenix inputs - Required modules, don't modify unless you know what you're doing
     inputs.hydenix.inputs.home-manager.nixosModules.home-manager
     inputs.hydenix.lib.nixOsModules
-    ./modules/system # Your custom system modules
-    ./hardware-configuration.nix # Auto-generated hardware config
+    ./../modules/system # Your custom system modules
 
     # Hardware Configuration - Uncomment lines that match your hardware
     # Run `lshw -short` or `lspci` to identify your hardware
@@ -57,13 +56,12 @@ in {
     useGlobalPkgs = true;
     useUserPackages = true;
     extraSpecialArgs = {inherit inputs;};
-    # User Configuration - REQUIRED: Change "hydenix" to your actual username
     # This must match the username you define in users.users below
     users."roverp_vm" = {...}: {
       imports = [
         inputs.hydenix.lib.homeModules
         inputs.nix-index-database.hmModules.nix-index # Command-not-found and comma tool support
-        ./modules/hm # Your custom home-manager modules (configure hydenix.hm here!)
+        ./../modules/hm # Your custom home-manager modules (configure hydenix.hm here!)
       ];
     };
   };
