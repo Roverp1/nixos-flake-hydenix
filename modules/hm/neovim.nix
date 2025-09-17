@@ -19,7 +19,7 @@
       fd
 
       lua-language-server
-      nil
+      nixd
 
       stylua
       alejandra
