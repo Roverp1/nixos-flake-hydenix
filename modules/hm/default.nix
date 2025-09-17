@@ -56,7 +56,7 @@
 
     theme = {
       active = "Another World";
-      themes = ["AbyssGreen" "AncientAliens" "Another World" "BlueSky" "Cat Latte" "Decay Green" "Ever Blushing" "Greenify" "Oxo Carbon" "Peace Of Mind" "Vanta Black"];
+      themes = ["AbyssGreen" "Another World" "BlueSky" "Cat Latte" "Oxo Carbon" "Vanta Black"];
     };
   };
 }
