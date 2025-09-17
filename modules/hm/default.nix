@@ -55,6 +55,7 @@
     firefox.enable = false;
     editors.neovim = false;
     terminals.enable = false;
+    terminals.kitty.enable = false;
 
     theme = {
       active = "Another World";

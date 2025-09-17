@@ -33,8 +33,8 @@
       "ctrl+shift+comma" = "decrease_font_size";
     };
 
-    extraConfig = ''
-      include theme.conf
-    '';
+    # extraConfig = ''
+    #   include theme.conf
+    # '';
   };
 }
