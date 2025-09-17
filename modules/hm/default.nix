@@ -49,10 +49,12 @@
   hydenix.hm = {
     enable = true;
 
+    editors.default = "nvim";
+
     git.enable = false;
     firefox.enable = false;
     editors.neovim = false;
-    editors.default = "nvim";
+    terminals.enable = false;
 
     theme = {
       active = "Another World";
