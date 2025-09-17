@@ -11,7 +11,7 @@
       confirm_os_window_close = 3;
       enable_audio_bell = true;
 
-      curesor_shape = "block";
+      cursor_shape = "block";
       mouse_hide_wait = 2.0;
       cursor_blink_interval = 0;
 
@@ -29,8 +29,8 @@
       "ctrl+shift+minus" = "no_op";
       "ctrl+shift+equal" = "no_op";
 
-      "map+shift+period" = "increase_font_size";
-      "map+shift+comma" = "decrease_font_size";
+      "ctrl+shift+period" = "increase_font_size";
+      "ctrl+shift+comma" = "decrease_font_size";
     };
 
     extraConfig = ''

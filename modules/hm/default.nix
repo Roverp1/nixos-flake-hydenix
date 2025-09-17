@@ -1,9 +1,9 @@
 {pkgs, ...}: {
   imports = [
-    # ./example.nix - add your modules here
     ./hyprland.nix
     ./neovim.nix
     ./zen-browser.nix
+    ./kitty.nix
   ];
 
   # home-manager options go here
