@@ -5,7 +5,7 @@
     ./hyprland.nix
     ./neovim.nix
     ./zen-browser.nix
-    ./kitty.nix
+    # ./kitty.nix
   ];
 
   # home-manager options go here
