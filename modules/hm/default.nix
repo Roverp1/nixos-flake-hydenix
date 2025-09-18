@@ -1,5 +1,7 @@
 {pkgs, ...}: {
   imports = [
+    ./devPrograms
+
     ./hyprland.nix
     ./neovim.nix
     ./zen-browser.nix
@@ -8,21 +10,7 @@
 
   # home-manager options go here
   home.packages = with pkgs; [
-    userPkgs.yazi
     userPkgs.opencode
-
-    file
-    ffmpeg
-    p7zip
-    jq
-    poppler
-    fd
-    ripgrep
-    fzf
-    zoxide
-    resvg
-    imagemagick
-    wl-clipboard
   ];
 
   programs = {
