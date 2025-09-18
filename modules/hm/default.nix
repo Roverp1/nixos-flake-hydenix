@@ -10,7 +10,7 @@
 
   # home-manager options go here
   home.packages = with pkgs; [
-    userPkgs.opencode
+    # --- packages ---
   ];
 
   programs = {
@@ -22,14 +22,6 @@
       extraConfig = {
         init.defaultBranch = "main";
       };
-    };
-
-    opencode = {
-      enable = true;
-      package = pkgs.userPkgs.opencode;
-
-      # might be proble because of schema declaration duplication
-      settings = builtins.fromJSON (builtins.readFile ./../../Configs/.config/opencode/opencode.json);
     };
   };
 

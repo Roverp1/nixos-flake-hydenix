@@ -2,6 +2,7 @@
   config,
   lib,
   pkgs,
+  ...
 }: let
   cfg = config.roverp.programs.yazi;
 in {
