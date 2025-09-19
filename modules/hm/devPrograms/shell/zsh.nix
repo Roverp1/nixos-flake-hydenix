@@ -35,6 +35,7 @@ in {
         (lib.mkIf cfg.purePrompt.enable {
           name = pure-prompt.pname;
           src = pure-prompt.src;
+          file = "pure.zsh";
         })
       ];
 
