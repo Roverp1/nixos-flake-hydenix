@@ -1,4 +1,9 @@
-{pkgs, ...}: {
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}: {
   imports = [
     ./devPrograms
 
@@ -34,7 +39,7 @@
       NPM_CONFIG_USERCONFIG = "${config.xdg.configHome}/npm/npmrc";
 
       # Other programs
-      LESSHISTFILE = "${config.xdg.cacheHome}/less_history";
+      LESSHISTFILE = lib.mkDefault "${config.xdg.cacheHome}/less_history";
       PYTHON_HISTORY = "${config.xdg.dataHome}/python/history";
       WGETRC = "${config.xdg.configHome}/wget/wgetrc";
       GNUPGHOME = "${config.xdg.dataHome}/gnupg";
