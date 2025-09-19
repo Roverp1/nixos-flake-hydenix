@@ -7,7 +7,8 @@
 in {
   options = {
     roverp.shell.ohMyPosh.enable = lib.mkOption {
-      default = config.roverp.shell.zsh.enable;
+      type = lib.types.bool;
+      default = false;
       description = "Enable oh-my-posh module";
     };
   };
