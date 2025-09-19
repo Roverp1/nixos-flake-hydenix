@@ -4,10 +4,10 @@
   pkgs,
   ...
 }: let
-  cfg = config.roverp.programs.zsh;
+  cfg = config.roverp.shell.zsh;
 in {
   options = {
-    roverp.programs.zsh.enable = lib.mkOption {
+    roverp.shell.zsh.enable = lib.mkOption {
       default = true;
       description = "Enable zsh module";
     };
@@ -25,7 +25,7 @@ in {
       ];
 
       initContent = let
-        zshConfig = lib.mkOrder 1000 (builtins.readFile ./../../../Configs/.config/zsh/.zshrc);
+        zshConfig = lib.mkOrder 1000 (builtins.readFile ./../../../../Configs/.config/zsh/.zshrc);
       in
         lib.mkMerge [zshConfig];
     };
