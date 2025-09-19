@@ -9,7 +9,7 @@
     };
 
     animations = {
-      preset = "minimal-1";
+      preset = "minimal-2";
     };
 
     shaders.enable = false;
