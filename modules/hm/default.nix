@@ -36,6 +36,7 @@
     editors.neovim = false;
     terminals.enable = false;
     terminals.kitty.enable = false;
+    shells.enable = false;
 
     theme = {
       active = "Another World";
