@@ -26,6 +26,23 @@ in {
     programs.zsh = {
       enable = true;
 
+      enableCompletion = false;
+      autosuggestion.enable = false;
+      syntaxHighlighting.enable = false;
+
+      history = {
+        size = 1000000;
+        save = 1000000;
+        path = "${config.xdg.cacheHome}/zsh/history";
+
+        append = true;
+        extended = true;
+        share = true;
+        ignoreDups = true;
+        ignoreSpace = true;
+        expireDuplicatesFirst = true;
+      };
+
       plugins = with pkgs; [
         {
           name = zsh-syntax-highlighting.pname;
@@ -44,16 +61,16 @@ in {
           autoload -U promptinit; promptinit
           prompt pure
 
-          prompt_newline='%666v'
+          prompt_newline=' '
           PROMPT=" $PROMPT"
         '';
 
         zshConfig = lib.mkOrder 1000 (builtins.readFile ./../../../../Configs/.config/zsh/.zshrc);
-        zshConfigEarly = lib.mkOrder 500 ''
+        zshConfigAfterPlugins = lib.mkOrder 600 ''
           ${purePromptConfig}
         '';
       in
-        lib.mkMerge [zshConfigEarly zshConfig];
+        lib.mkMerge [zshConfigAfterPlugins zshConfig];
     };
   };
 }

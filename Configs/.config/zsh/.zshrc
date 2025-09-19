@@ -6,17 +6,17 @@ export XDG_CACHE_HOME="$HOME/.cache"
 setopt extended_glob
 setopt glob_dots
 
-setopt extended_history
-setopt inc_append_history
-setopt share_history
-setopt hist_reduce_blanks hist_ignore_space
-setopt hist_ignore_all_dups hist_save_no_dups hist_ignore_dups hist_find_no_dups
+# setopt extended_history
+# setopt inc_append_history
+# setopt share_history
+# setopt hist_reduce_blanks hist_ignore_space
+# setopt hist_ignore_all_dups hist_save_no_dups hist_ignore_dups hist_find_no_dups
 
 # History
-HISTSIZE=1000000
-SAVEHIST=1000000
-HISTFILE="$XDG_CACHE_HOME/zsh/history"
-[[ ! -d "$(dirname $HISTFILE)" ]] && mkdir -p "$dirname $HISTFILE"
+# HISTSIZE=1000000
+# SAVEHIST=1000000
+# HISTFILE="$XDG_CACHE_HOME/zsh/history"
+# [[ ! -d "$(dirname $HISTFILE)" ]] && mkdir -p "$dirname $HISTFILE"
 
 # Key binds
 bindkey -v
