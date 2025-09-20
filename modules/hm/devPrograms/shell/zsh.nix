@@ -72,5 +72,9 @@ in {
       in
         lib.mkMerge [zshConfigAfterPlugins zshConfig];
     };
+
+    home.file = {
+      ".zshenv".source = ./../../../../Configs/.zshenv;
+    };
   };
 }
