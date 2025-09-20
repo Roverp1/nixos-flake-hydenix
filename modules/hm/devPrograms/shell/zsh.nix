@@ -64,6 +64,7 @@ in {
         (lib.mkIf cfg.fzfIntegration.enable {
           name = zsh-fzf-tab.pname;
           src = zsh-fzf-tab.src;
+          file = "fzf-tab";
         })
       ];
 

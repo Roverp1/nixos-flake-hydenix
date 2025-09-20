@@ -22,7 +22,7 @@ in {
       poppler
       fd
       ripgrep
-      fzf
+      (lib.mkIf config.roverp.programs.fzf.enable fzf)
       (lib.mkIf config.roverp.shell.zoxide.enable zoxide)
       resvg
       imagemagick
