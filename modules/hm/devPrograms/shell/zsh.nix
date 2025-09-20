@@ -27,9 +27,9 @@ in {
       enable = true;
       dotDir = "${config.xdg.configHome}/zsh";
 
-      enableCompletion = false;
-      autosuggestion.enable = false;
-      syntaxHighlighting.enable = false;
+      enableCompletion = true;
+      autosuggestion.enable = true;
+      syntaxHighlighting.enable = true;
 
       history = {
         size = 1000000;
