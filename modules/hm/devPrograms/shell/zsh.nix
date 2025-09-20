@@ -34,7 +34,7 @@ in {
       history = {
         size = 1000000;
         save = 1000000;
-        path = "${config.xdg.cacheHome}/zsh/history";
+        path = "${config.xdg.dataHome}/zsh/history";
 
         extended = true;
         share = true;
@@ -63,6 +63,9 @@ in {
 
           prompt_newline='%666v'
           PROMPT=" $PROMPT"
+          print() {
+            [ 0 -eq $# -a "prompt_pure_precmd" = "''${funcstack[-1]}" ] || builtin print "$@";
+          }
         '';
 
         zshConfigAfterPlugins = lib.mkOrder 600 ''
