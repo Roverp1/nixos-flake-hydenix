@@ -25,7 +25,7 @@ in {
   config = lib.mkIf cfg.enable {
     programs.zsh = {
       enable = true;
-      dotDir = "`\${config.xdg.configHome}/zsh`";
+      dotDir = "${config.xdg.configHome}/zsh";
 
       enableCompletion = false;
       autosuggestion.enable = false;
@@ -36,7 +36,6 @@ in {
         save = 1000000;
         path = "${config.xdg.cacheHome}/zsh/history";
 
-        append = true;
         extended = true;
         share = true;
         ignoreDups = true;
@@ -62,14 +61,14 @@ in {
           autoload -U promptinit; promptinit
           prompt pure
 
-          prompt_newline=' %666v'
+          prompt_newline='%666v'
           PROMPT=" $PROMPT"
         '';
 
-        zshConfig = lib.mkOrder 1000 (builtins.readFile ./../../../../Configs/.config/zsh/.zshrc);
         zshConfigAfterPlugins = lib.mkOrder 600 ''
           ${purePromptConfig}
         '';
+        zshConfig = lib.mkOrder 1000 (builtins.readFile ./../../../../Configs/.config/zsh/.zshrc);
       in
         lib.mkMerge [zshConfigAfterPlugins zshConfig];
     };

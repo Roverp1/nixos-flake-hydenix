@@ -62,6 +62,8 @@
     };
   };
 
+  roverp.shell.zsh.enable = false;
+
   # hydenix home-manager options go here
   hydenix.hm = {
     enable = true;
@@ -73,7 +75,7 @@
     editors.neovim = false;
     terminals.enable = false;
     terminals.kitty.enable = false;
-    shell.enable = false;
+    # shell.enable = false;
 
     theme = {
       active = "Another World";
