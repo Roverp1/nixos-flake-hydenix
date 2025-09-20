@@ -68,7 +68,7 @@ in {
       ];
 
       initContent = let
-        purePromptConfig = lib.mkIf cfg.purePrompt.enable lib.mkOrder 600 ''
+        purePromptConfig = lib.mkIf cfg.purePrompt.enable (lib.mkOrder 600 ''
           autoload -U promptinit; promptinit
           prompt pure
 
@@ -77,13 +77,13 @@ in {
           print() {
             [ 0 -eq $# -a "prompt_pure_precmd" = "''${funcstack[-1]}" ] || builtin print "$@";
           }
-        '';
+        '');
 
-        fzfConfig = lib.mkIf cfg.fzfIntegration.enable lib.mkOrder 1050 ''
+        fzfConfig = lib.mkIf cfg.fzfIntegration.enable (lib.mkOrder 1050 ''
           zstyle ':completion:*' menu no
           zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
           zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
-        '';
+        '');
 
         zshConfig = lib.mkOrder 1000 (builtins.readFile ./../../../../Configs/.config/zsh/.zshrc);
       in
