@@ -27,5 +27,4 @@ bindkey -M viins "^w" backward-kill-word
 zstyle ':completion:*' menu select
 zstyle ':completion:*' list-colors "''${(s.:.)LS_COLORS}"
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|=*' 'l:|=* r:|=*'
-zstyle ':completion:*' group-name ""
 zstyle ':completion:*:descriptions' format '%B%d%b'
