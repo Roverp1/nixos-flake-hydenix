@@ -23,7 +23,7 @@ in {
       fd
       ripgrep
       fzf
-      zoxide
+      (lib.mkIf config.roverp.shell.zoxide.enable zoxide)
       resvg
       imagemagick
       wl-clipboard
