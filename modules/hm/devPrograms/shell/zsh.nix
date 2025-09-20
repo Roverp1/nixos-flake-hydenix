@@ -57,7 +57,7 @@ in {
       ];
 
       initContent = let
-        purePromptConfig = ''
+        purePromptConfig = lib.mkOrder 600 ''
           autoload -U promptinit; promptinit
           prompt pure
 
@@ -68,12 +68,9 @@ in {
           }
         '';
 
-        zshConfigAfterPlugins = lib.mkOrder 600 ''
-          ${purePromptConfig}
-        '';
         zshConfig = lib.mkOrder 1000 (builtins.readFile ./../../../../Configs/.config/zsh/.zshrc);
       in
-        lib.mkMerge [zshConfigAfterPlugins zshConfig];
+        lib.mkMerge [purePromptConfig zshConfig];
     };
 
     home.file = {
