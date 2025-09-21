@@ -1,6 +1,7 @@
 {...}: {
   hydenix.hm.hyprland = {
     extraConfig = builtins.readFile ./../../Configs/.config/hypr/general.conf;
+    suppressWarnings = true;
 
     keybindings = {
       enable = true;
