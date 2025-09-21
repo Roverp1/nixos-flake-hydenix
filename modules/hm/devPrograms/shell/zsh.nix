@@ -85,6 +85,11 @@ in {
           zstyle ':completion:*' menu select
           zstyle ':completion:*' list-colors "''${(s.:.)LS_COLORS}"
           zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|=*' 'l:|=* r:|=*'
+
+          ${lib.optionalString (!cfg.fzfIntegration.enable) ''
+            bindkey "^I" menu-complete
+            bindkey "^[[Z" reverse-menu-complete
+          ''}
         '';
 
         fzfTabConfig = lib.mkIf cfg.fzfIntegration.enable (lib.mkOrder 750 ''
