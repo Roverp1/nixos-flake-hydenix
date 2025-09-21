@@ -22,9 +22,3 @@ bindkey "^I" menu-complete
 bindkey "^[[Z" reverse-menu-complete
 
 bindkey -M viins "^w" backward-kill-word
-
-# Completion styling
-zstyle ':completion:*' menu select
-zstyle ':completion:*' list-colors "''${(s.:.)LS_COLORS}"
-zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|=*' 'l:|=* r:|=*'
-zstyle ':completion:*:descriptions' format '%B%d%b'

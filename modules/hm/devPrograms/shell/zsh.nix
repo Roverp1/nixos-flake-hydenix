@@ -64,7 +64,7 @@ in {
         (lib.mkIf cfg.fzfIntegration.enable {
           name = zsh-fzf-tab.pname;
           src = zsh-fzf-tab.src;
-          file = "fzf-tab";
+          file = "fzf-tab.plugin.zsh";
         })
       ];
 
@@ -80,7 +80,14 @@ in {
           }
         '');
 
-        fzfConfig = lib.mkIf cfg.fzfIntegration.enable (lib.mkOrder 1050 ''
+        completionConfig = lib.mkOrder 700 ''
+          # Completion styling
+          zstyle ':completion:*' menu select
+          zstyle ':completion:*' list-colors "''${(s.:.)LS_COLORS}"
+          zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|=*' 'l:|=* r:|=*'
+        '';
+
+        fzfTabConfig = lib.mkIf cfg.fzfIntegration.enable (lib.mkOrder 750 ''
           zstyle ':completion:*' menu no
           zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
           zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
@@ -88,7 +95,7 @@ in {
 
         zshConfig = lib.mkOrder 1000 (builtins.readFile ./../../../../Configs/.config/zsh/.zshrc);
       in
-        lib.mkMerge [purePromptConfig zshConfig fzfConfig];
+        lib.mkMerge [purePromptConfig completionConfig fzfTabConfig zshConfig];
     };
 
     home.file = {
