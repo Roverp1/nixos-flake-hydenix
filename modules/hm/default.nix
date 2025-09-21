@@ -50,7 +50,7 @@
     editors.neovim = false;
     terminals.enable = false;
     terminals.kitty.enable = false;
-    shell.enable = false;
+    shell.enable = !config.roverp.shell.zsh.enable;
     xdg.enable = false;
 
     theme = {
