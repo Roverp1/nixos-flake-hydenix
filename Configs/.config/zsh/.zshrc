@@ -1,4 +1,4 @@
-WORDCHARS='*?_.[]~=&;!#$%^(){}<>'
+WORDCHARS="_"
 
 # Options
 setopt extended_glob
