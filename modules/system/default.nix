@@ -5,7 +5,7 @@
   ...
 }: {
   imports = [
-    # ./example.nix - add your modules here
+    ./stylix.nix
   ];
 
   environment.systemPackages = with pkgs; [
