@@ -27,6 +27,11 @@
       # to have it up-to-date or simply don't specify the nixpkgs input
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    stylix = {
+      url = "github:nix-community/stylix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {...} @ inputs: let
@@ -36,6 +41,7 @@
         inherit inputs;
       };
       modules = [
+        inputs.stylix.nixosModules.stylix
         ./hosts/vm/configuration.nix
       ];
     };
