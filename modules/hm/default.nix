@@ -39,6 +39,16 @@
     };
   };
 
+  stylix = {
+    targets = {
+      qt.enable = false;
+      gtk.enable = false;
+      vscode.enable = false;
+
+      zen-browser.profileNames = ["default"];
+    };
+  };
+
   # hydenix home-manager options go here
   hydenix.hm = {
     enable = true;
@@ -54,6 +64,7 @@
     xdg.enable = false;
 
     theme = {
+      enable = true;
       active = "Another World";
       themes = ["AbyssGreen" "Another World" "BlueSky" "Cat Latte" "Oxo Carbon" "Vanta Black"];
     };
