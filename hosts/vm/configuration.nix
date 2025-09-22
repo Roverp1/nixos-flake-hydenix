@@ -24,6 +24,8 @@ in {
     ./../../modules/system # Your custom system modules
     ./hardware-configuration.nix
 
+    inputs.stylix.nixosModules.stylix
+
     # Hardware Configuration - Uncomment lines that match your hardware
     # Run `lshw -short` or `lspci` to identify your hardware
 

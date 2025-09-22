@@ -41,7 +41,6 @@
         inherit inputs;
       };
       modules = [
-        inputs.stylix.nixosModules.stylix
         ./hosts/vm/configuration.nix
       ];
     };
