@@ -5,7 +5,7 @@
 }: let
   inherit (lib) optionalAttrs;
 
-  selectTheme = "oxocarbon-dark";
+  selectTheme = "ayu-dark";
 
   themes = import ./themes/default.nix {inherit pkgs;};
   theme = themes.${selectTheme};
@@ -14,7 +14,7 @@ in {
     enable = true;
 
     base16Scheme = theme.base16Scheme;
-    image = theme.wallpaper;
+    # image = theme.wallpaper;
     # polarity = theme.polarity;
 
     fonts = {
