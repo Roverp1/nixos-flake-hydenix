@@ -7,6 +7,6 @@ in {
   };
 
   ayu-dark = {
-    base16-schemes = themePath "ayu-dark";
+    base16Scheme = themePath "ayu-dark";
   };
 }
