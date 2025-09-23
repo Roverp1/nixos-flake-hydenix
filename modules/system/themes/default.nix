@@ -9,4 +9,8 @@ in {
   ayu-dark = {
     base16Scheme = themePath "ayu-dark";
   };
+
+  gruvbox-dark-hard = {
+    base16Scheme = themePath "gruvbox-dark-hard";
+  };
 }
