@@ -44,6 +44,7 @@
       qt.enable = false;
       gtk.enable = false;
       vscode.enable = false;
+      xresources.enable = false;
 
       zen-browser.profileNames = ["default"];
     };
