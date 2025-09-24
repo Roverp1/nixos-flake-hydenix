@@ -14,7 +14,7 @@ in {
     base16Scheme = themePath "gruvbox-dark-hard";
   };
 
-  nocturnal-winter = {
-    base16Scheme = themePath "nocturnal-winter";
+  rebecca = {
+    base16Scheme = themePath "rebecca";
   };
 }

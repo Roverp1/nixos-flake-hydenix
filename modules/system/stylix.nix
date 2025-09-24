@@ -5,7 +5,7 @@
 }: let
   inherit (lib) optionalAttrs;
 
-  selectTheme = "nocturnal-winter";
+  selectTheme = "rebecca";
 
   themes = import ./themes/default.nix {inherit pkgs;};
   theme = themes.${selectTheme};
