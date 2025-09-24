@@ -16,5 +16,5 @@ in {
 
   nocturnal-winter = {
     base16Scheme = themePath "nocturnal-winter";
-  }
+  };
 }
