@@ -5,7 +5,7 @@
 }: let
   inherit (lib) optionalAttrs;
 
-  selectTheme = "gruvbox-dark-hard";
+  selectTheme = "nocturnal-winter";
 
   themes = import ./themes/default.nix {inherit pkgs;};
   theme = themes.${selectTheme};
