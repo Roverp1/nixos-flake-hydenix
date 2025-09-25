@@ -11,11 +11,11 @@ in {
   stylix = {
     enable = true;
 
-    cursor = {
-      package = pkgs.bibata-cursors;
-      name = "Bibata-Modern-Classic";
-      size = 24;
-    };
+    # cursor = {
+    #   package = pkgs.bibata-cursors;
+    #   name = "Bibata-Modern-Classic";
+    #   size = 24;
+    # };
 
     base16Scheme = theme.base16Scheme;
     # image = theme.wallpaper;
