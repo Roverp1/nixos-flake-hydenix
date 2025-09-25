@@ -18,7 +18,6 @@ in {
   config = lib.mkIf cfg.enable {
     home.packages = with pkgs; [
       hydenix.hyde
-      Bibata-Modern-Ice
       Tela-circle-dracula
       kdePackages.kconfig # TODO: not sure if this is still needed
       wf-recorder # screen recorder for wlroots-based compositors such as sway
