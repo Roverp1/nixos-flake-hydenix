@@ -7,8 +7,6 @@
   imports = [
     ./devPrograms
 
-    ./hyde.nix
-
     ./hyprland.nix
     ./xdg.nix
     ./neovim.nix
@@ -19,19 +17,6 @@
   # home-manager options go here
   home = {
     packages = with pkgs; [
-      # important?
-      # Essential Qt theming (if you use Qt apps)
-      # libsForQt5.qt5ct
-      # libsForQt5.qtstyleplugin-kvantum
-      # kdePackages.qt6ct
-      #
-      # # Essential for GTK apps
-      gsettings-desktop-schemas
-      gnome-settings-daemon
-      #
-      # # Icon fallbacks
-      adwaita-icon-theme
-      kdePackages.breeze-icons
     ];
 
     sessionVariables = {
@@ -55,10 +40,11 @@
 
   stylix = {
     targets = {
-      # qt.enable = false;
-      # gtk.enable = false;
-      # vscode.enable = false;
-      # xresources.enable = false;
+      qt.enable = false;
+      gtk.enable = false;
+      vscode.enable = false;
+      xresources.enable = false;
+      sxiv.enable = false;
 
       zen-browser.profileNames = ["default"];
     };
@@ -67,8 +53,6 @@
   # hydenix home-manager options go here
   hydenix.hm = {
     enable = true;
-
-    hyde.enable = false;
 
     editors = {
       default = "nvim";
@@ -81,9 +65,10 @@
     terminals.enable = false;
     terminals.kitty.enable = false;
     shell.enable = !config.roverp.shell.zsh.enable;
-    xdg.enable = false;
-    gtk.enable = false;
-    qt.enable = false;
+    # xdg.enable = false;
+    # gtk.enable = false;
+    # qt.enable = false;
+    # hyde.enable = false;
 
     theme = {
       enable = false;

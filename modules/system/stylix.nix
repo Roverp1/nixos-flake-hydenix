@@ -3,7 +3,7 @@
   pkgs,
   ...
 }: let
-  selectTheme = "oxocarbon-dark";
+  selectTheme = "ayu-dark";
 
   themes = import ./themes/default.nix {inherit pkgs;};
   theme = themes.${selectTheme};
@@ -18,7 +18,7 @@ in {
     };
 
     base16Scheme = theme.base16Scheme;
-    image = theme.wallpaper;
+    # image = theme.wallpaper;
     # polarity = theme.polarity;
 
     fonts = {
