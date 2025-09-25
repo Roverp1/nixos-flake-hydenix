@@ -24,12 +24,12 @@
       # kdePackages.qt6ct
       #
       # # Essential for GTK apps
-      # gsettings-desktop-schemas
-      # gnome-settings-daemon
+      gsettings-desktop-schemas
+      gnome-settings-daemon
       #
       # # Icon fallbacks
-      # adwaita-icon-theme
-      # kdePackages.breeze-icons
+      adwaita-icon-theme
+      kdePackages.breeze-icons
     ];
 
     sessionVariables = {
