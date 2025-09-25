@@ -7,6 +7,8 @@
   imports = [
     ./devPrograms
 
+    ./hyde.nix
+
     ./hyprland.nix
     ./xdg.nix
     ./neovim.nix
@@ -65,6 +67,8 @@
   # hydenix home-manager options go here
   hydenix.hm = {
     enable = true;
+
+    hyde.enable = false;
 
     editors = {
       default = "nvim";
