@@ -17,7 +17,19 @@
   # home-manager options go here
   home = {
     packages = with pkgs; [
-      # --- packages ---
+      # important?
+      # Essential Qt theming (if you use Qt apps)
+      # libsForQt5.qt5ct
+      # libsForQt5.qtstyleplugin-kvantum
+      # kdePackages.qt6ct
+      #
+      # # Essential for GTK apps
+      # gsettings-desktop-schemas
+      # gnome-settings-daemon
+      #
+      # # Icon fallbacks
+      # adwaita-icon-theme
+      # kdePackages.breeze-icons
     ];
 
     sessionVariables = {
@@ -41,10 +53,10 @@
 
   stylix = {
     targets = {
-      qt.enable = false;
-      gtk.enable = false;
-      vscode.enable = false;
-      xresources.enable = false;
+      # qt.enable = false;
+      # gtk.enable = false;
+      # vscode.enable = false;
+      # xresources.enable = false;
 
       zen-browser.profileNames = ["default"];
     };
@@ -54,7 +66,10 @@
   hydenix.hm = {
     enable = true;
 
-    editors.default = "nvim";
+    editors = {
+      default = "nvim";
+      vscode.enable = false;
+    };
 
     git.enable = false;
     firefox.enable = false;
@@ -63,9 +78,11 @@
     terminals.kitty.enable = false;
     shell.enable = !config.roverp.shell.zsh.enable;
     xdg.enable = false;
+    gtk.enable = false;
+    qt.enable = false;
 
     theme = {
-      enable = true;
+      enable = false;
       active = "Another World";
       themes = ["AbyssGreen" "Another World" "BlueSky" "Cat Latte" "Oxo Carbon" "Vanta Black"];
     };
