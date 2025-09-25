@@ -65,7 +65,7 @@
     terminals.enable = false;
     terminals.kitty.enable = false;
     shell.enable = !config.roverp.shell.zsh.enable;
-    # xdg.enable = false;
+    xdg.enable = false;
     # gtk.enable = false;
     # qt.enable = false;
     # hyde.enable = false;
