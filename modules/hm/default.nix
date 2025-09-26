@@ -12,6 +12,7 @@
     ./neovim.nix
     ./zen-browser.nix
     # ./kitty.nix
+    ./shell.nix
   ];
 
   # home-manager options go here
@@ -50,6 +51,8 @@
     };
   };
 
+  roverp.shell.zsh.enable = false;
+
   # hydenix home-manager options go here
   hydenix.hm = {
     enable = true;
@@ -64,7 +67,7 @@
     editors.neovim = false;
     terminals.enable = false;
     terminals.kitty.enable = false;
-    shell.enable = !config.roverp.shell.zsh.enable;
+    shell.enable = false;
     xdg.enable = false;
     # gtk.enable = false;
     # qt.enable = false;
