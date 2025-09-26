@@ -6,10 +6,10 @@
 }:
 
 let
-  cfg = config.hydenix.hm.shell;
+  cfg = config.roverp.hm.shell;
 in
 {
-  options.hydenix.hm.shell = {
+  options.roverp.hm.shell = {
     enable = lib.mkOption {
       type = lib.types.bool;
       default = config.hydenix.hm.enable;
